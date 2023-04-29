@@ -6,7 +6,7 @@
     "version": "2.2.2"
   },
   "servers": [
-    {
+  {
       "url": "https://finance-planner-app-api.onrender.com"
     }
   ],
