@@ -6,7 +6,7 @@ const { requestError } = require('../../helpers');
 const { nanoid } = require('nanoid');
 const sendMail = require('../../helpers/sendMail');
 const { emailTemplate } = require('../../helpers');
-// const { FRONTEND_URL } = process.env;
+const { FRONTEND_URL } = process.env;
 
 const register = async (req, res) => {
   const { name, email, password } = req.body;
@@ -27,10 +27,7 @@ const register = async (req, res) => {
   const mail = {
     to: email,
     subject: 'Finance-planner-app',
-    html: emailTemplate(
-      'https://financial-planning-app-front.netlify.app',
-      verificationToken
-    ),
+    html: emailTemplate(FRONTEND_URL, verificationToken),
   };
 
   await sendMail(mail);
