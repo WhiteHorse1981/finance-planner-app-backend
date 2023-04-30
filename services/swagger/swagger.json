@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://finance-planner-app-l78h.onrender.com/api"
+      "url": "https://finance-planner-app-back-app.onrender.com/api"
     }
   ],
   "tags": [
