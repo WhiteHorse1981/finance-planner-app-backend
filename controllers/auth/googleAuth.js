@@ -6,6 +6,8 @@ require('dotenv').config();
 const { SECRET_KEY } = process.env;
 
 const googleAuth = async (req, res) => {
+  const FRONTEND_URL_PERSONAL_PLAN =
+    'https://financial-planning-app-front.netlify.app/personal-plan';
   const { _id: id } = req.user;
   const payload = {
     id,
@@ -16,7 +18,7 @@ const googleAuth = async (req, res) => {
 
   res.redirect(
     // `${FRONTEND_URL}?email=${req.user.email}&password=${req.user.password}`
-    `https://financial-planning-app-front.netlify.app/personal-plan?email=${req.user.email}&password=${req.user.password}`
+    `${FRONTEND_URL_PERSONAL_PLAN}?email=${req.user.email}&password=${req.user.password}`
   );
 };
 
